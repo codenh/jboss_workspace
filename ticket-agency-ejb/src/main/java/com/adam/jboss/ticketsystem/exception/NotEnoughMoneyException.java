@@ -1,4 +1,4 @@
-package com.naiyi.jboss.ticketsystem.exception;
+package com.adam.jboss.ticketsystem.exception;
 
 @SuppressWarnings("serial")
 public class NotEnoughMoneyException extends RuntimeException {

@@ -2,11 +2,11 @@ package com.adam.jboss.ticketsystem.client;
 
 import javax.naming.*;
 
+import com.adam.jboss.ticketsystem.ejb.TheatreBooker;
+import com.adam.jboss.ticketsystem.ejb.TheatreInfo;
+import com.adam.jboss.ticketsystem.exception.NotEnoughMoneyException;
+import com.adam.jboss.ticketsystem.exception.SeatBookedException;
 import com.adam.jboss.ticketsystem.utils.IOUtils;
-import com.naiyi.jboss.ticketsystem.ejb.TheatreBooker;
-import com.naiyi.jboss.ticketsystem.ejb.TheatreInfo;
-import com.naiyi.jboss.ticketsystem.exception.NotEnoughMoneyException;
-import com.naiyi.jboss.ticketsystem.exception.SeatBookedException;
 
 /*import org.jboss.ejb.client.ContextSelector;
 import org.jboss.ejb.client.EJBClient;
@@ -123,13 +123,13 @@ public class RemoteEJBClient {
 	private static TheatreInfo lookupTheatreInfoEJB() throws NamingException {
 		
 		final Context context = new InitialContext(jndiProperties);
-		return (TheatreInfo) context.lookup("ejb:/ticket-agency-ejb/TheatreInfoBean!com.naiyi.jboss.ticketsystem.ejb.TheatreInfo");		   
+		return (TheatreInfo) context.lookup("ejb:/ticket-agency-ejb/TheatreInfoBean!com.adam.jboss.ticketsystem.ejb.TheatreInfo");		   
 	}
 	
 	private static TheatreBooker lookupTheatreBookerEJB() throws NamingException {
 
 		final Context context = new InitialContext(jndiProperties);
-		return (TheatreBooker) context.lookup("ejb:/ticket-agency-ejb/TheatreBookerBean!com.naiyi.jboss.ticketsystem.ejb.TheatreBooker?stateful");		   
+		return (TheatreBooker) context.lookup("ejb:/ticket-agency-ejb/TheatreBookerBean!com.adam.jboss.ticketsystem.ejb.TheatreBooker?stateful");		   
 	}
 	
 	public static void dumpWelcomeMessage() {

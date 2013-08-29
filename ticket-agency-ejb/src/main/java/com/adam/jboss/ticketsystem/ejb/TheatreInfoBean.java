@@ -1,4 +1,4 @@
-package com.naiyi.jboss.ticketsystem.ejb;
+package com.adam.jboss.ticketsystem.ejb;
 
 import java.util.ArrayList;
 
@@ -6,7 +6,7 @@ import javax.ejb.EJB;
 import javax.ejb.Remote;
 import javax.ejb.Stateless;
 
-import com.naiyi.jboss.ticketsystem.model.Seat;
+import com.adam.jboss.ticketsystem.model.Seat;
 
 @Stateless
 @Remote(TheatreInfo.class) 

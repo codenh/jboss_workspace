@@ -1,11 +1,11 @@
-package com.naiyi.jboss.ticketsystem.ejb;
+package com.adam.jboss.ticketsystem.ejb;
 
 import java.util.concurrent.Future;
 
 import javax.ejb.Asynchronous;
 
-import com.naiyi.jboss.ticketsystem.exception.NotEnoughMoneyException;
-import com.naiyi.jboss.ticketsystem.exception.SeatBookedException;
+import com.adam.jboss.ticketsystem.exception.NotEnoughMoneyException;
+import com.adam.jboss.ticketsystem.exception.SeatBookedException;
 
 public interface TheatreBooker {
    public String bookSeat(int seatId) throws SeatBookedException,NotEnoughMoneyException;

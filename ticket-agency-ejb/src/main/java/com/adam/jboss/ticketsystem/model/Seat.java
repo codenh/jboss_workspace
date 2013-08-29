@@ -1,4 +1,4 @@
-package com.naiyi.jboss.ticketsystem.model;
+package com.adam.jboss.ticketsystem.model;
 
 public class Seat {
 	private int id;

@@ -1,4 +1,4 @@
-package com.naiyi.jboss.ticketsystem.ejb;
+package com.adam.jboss.ticketsystem.ejb;
 
 import javax.annotation.PostConstruct;
 
@@ -10,7 +10,7 @@ import javax.ejb.Startup;
 
 import org.jboss.logging.Logger;
 
-import com.naiyi.jboss.ticketsystem.model.Seat;
+import com.adam.jboss.ticketsystem.model.Seat;
 
 import java.util.*;
 

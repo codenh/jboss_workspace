@@ -1,4 +1,4 @@
-package com.naiyi.jboss.ticketsystem.ejb;
+package com.adam.jboss.ticketsystem.ejb;
 
 import java.util.concurrent.Future;
 
@@ -12,9 +12,9 @@ import javax.ejb.Stateful;
 
 import org.jboss.logging.Logger;
 
-import com.naiyi.jboss.ticketsystem.exception.NotEnoughMoneyException;
-import com.naiyi.jboss.ticketsystem.exception.SeatBookedException;
-import com.naiyi.jboss.ticketsystem.model.Seat;
+import com.adam.jboss.ticketsystem.exception.NotEnoughMoneyException;
+import com.adam.jboss.ticketsystem.exception.SeatBookedException;
+import com.adam.jboss.ticketsystem.model.Seat;
 
 @Stateful
 @Remote(TheatreBooker.class) 
