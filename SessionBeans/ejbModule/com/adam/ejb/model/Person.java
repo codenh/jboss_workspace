@@ -1,6 +1,8 @@
 package com.adam.ejb.model;
 
-public class Person {
+import java.io.Serializable;
+
+public class Person implements Serializable {
     private String name;
     
     public void setName(String name) {
