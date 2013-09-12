@@ -12,9 +12,17 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    
+    <version.jboss.as>7.2.0.Final</version.jboss.as>
+    <version.jboss.spec.javaee.6.0>3.0.2.Final</version.jboss.spec.javaee.6.0>
   </properties>
 
-  <dependencies>
-
-  </dependencies>
+    <dependencies>
+        <dependency>
+            <groupId>org.jboss.as</groupId>
+            <artifactId>jboss-as-ejb-client-bom</artifactId>
+            <type>pom</type>
+            <version>7.2.0.Final</version>
+        </dependency>
+    </dependencies>
 </project>
