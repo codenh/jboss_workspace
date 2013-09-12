@@ -2,6 +2,8 @@ package com.adam.ejb.client.jboss.sessionbean;
 
 import java.util.Hashtable;
 import java.util.Properties;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -31,7 +33,38 @@ public class SessionBeanClient {
     	System.out.println(newAdam);
     }
     
+    /*
+     *  Jboss will create more than one stateless session bean
+     *  and there is no guarantee that every time the client will
+     *  get the same bean even through the same proxy interface.
+     */
+    public static void testSLSB2() throws NamingException {
+    	Runnable task = new Runnable() {
+    		@Override
+    		public void run() {
+    			try {
+    				AddPrefix addPrefix = lookupAddPrefixEJB();
+    				for (int i = 0; i < 50; i++) {
+    					Person adam = new Person();
+    					adam.setName("Adam Hu");
+    					Person newAdam = addPrefix.addTitle(adam, "Mr." );
+    					System.out.println(Thread.currentThread() + ": " + newAdam);
+    				}
+    			} catch (Exception e) {
+    				e.printStackTrace();
+    			}
+    		}
+    	};
+    	
+    	ExecutorService pool = Executors.newFixedThreadPool(5);
+    	for (int i = 0; i < 50; i++) {
+    		pool.execute(task);
+    	}
+    	pool.shutdown();
+    }
+    
     public static void main(String[] args) throws NamingException {
-    	testSLSB();
+    	System.out.println("test 2");
+    	testSLSB2();
     }
 }
