@@ -25,7 +25,7 @@ import java.util.logging.Logger;
 
 
 public class RemoteEJBClient {
-	private final static Logger logger = Logger.getLogger(RemoteEJBClient.class .getName()); 
+	private final static Logger logger = Logger.getLogger(RemoteEJBClient.class.getName()); 
 	private final static Hashtable<String, String> jndiProperties = new Hashtable<String, String>();
 	
 	public static void main(String[] args) throws Exception {
